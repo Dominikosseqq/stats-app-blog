@@ -3,7 +3,7 @@ services:
     python:
         build:
             context: .
-            dockerfile: docker/python/Dockerfile
+            dockerfile: Dockerfile
         volumes:
             - ./myApp:/myApp
         ports: 
