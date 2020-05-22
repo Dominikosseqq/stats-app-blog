@@ -1,0 +1,25 @@
+version: '3'
+services:
+    python:
+        build:
+            context: .
+            dockerfile: docker/python/Dockerfile
+        volumes:
+            - ./myApp:/myApp
+        ports: 
+            - 8080:8080
+        command: sh -c "/wait && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8080"
+        environment: 
+            WAIT_HOSTS: postgres:5432
+        depends_on: 
+            - postgres
+    postgres:
+        image: postgres:9.6
+        environment:
+            POSTGRES_PASSWORD: admin
+            POSTGRES_USER: admin
+            POSTGRES_DB: myApp
+            PG_PASSWORD: admin
+        ports:
+            - 5432:5432
+        restart: always
