@@ -13,7 +13,7 @@ It will take about **40 seconds** depends on Your local machine.
 ```
 curl localhost:8080/reinitdatabase
 ```
-Response will explain you that success or fail.
+Response will explain you that opartion was success or fail.
 
 [Response_DB](https://i.ibb.co/NjGHjNk/initdb-img.jpg)
 
