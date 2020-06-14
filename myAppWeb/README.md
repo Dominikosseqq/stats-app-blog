@@ -5,5 +5,5 @@
 ## stats provided by selected authors in list
 ![STATS_ALL](https://ibb.co/fS6SDtR)
 
-# Note that if you have selected all authors before you must first second time click on the "all" in list or click CLEAR button
+### Note that, If You have selected all authors before, You must at first click second time on "all" in the list or click CLEAR button
 ![CLEAR_BUTTON](https://ibb.co/4JRMVfz)
