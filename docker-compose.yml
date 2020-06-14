@@ -1,10 +1,11 @@
 version: '3'
 services:
     statsapp:
-        build:
-            context: .
+        build: 
+            context: ./myApp
             dockerfile: Dockerfile
-        volumes:
+        container_name: Django_Backend
+        volumes: 
             - ./myApp:/myApp
         ports: 
             - 8080:8080
@@ -15,11 +16,24 @@ services:
             - postgres
     postgres:
         image: postgres:9.6
+        container_name: Postgres_DB
         environment:
             POSTGRES_PASSWORD: admin
             POSTGRES_USER: admin
             POSTGRES_DB: myApp
             PG_PASSWORD: admin
-        ports:
+        ports: 
             - 5432:5432
         restart: always
+    statsappweb:
+        build: 
+            context: ./myAppWeb/myAppWeb
+            dockerfile: Dockerfile
+        container_name: CRA_TS_Frontend
+        stdin_open: true
+        ports: 
+            - 3000:3000
+        command: yarn start
+        restart: unless-stopped
+        depends_on: 
+            - statsapp

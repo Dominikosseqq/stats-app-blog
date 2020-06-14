@@ -17,7 +17,7 @@ def index(request):
 
 def authors(request):
   response = json.dumps(getAuthorsQuery())
-  return HttpResponse(response, content_type='text/json')
+  return HttpResponse(response, content_type='application/json')
 
 
 def authorStats(request, author):

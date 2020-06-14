@@ -1,7 +1,7 @@
 FROM python:3.6
 
-COPY ./myApp /myApp
-WORKDIR /myApp
+COPY ./Backend /Backend
+WORKDIR /Backend
 RUN python -m pip install --upgrade pip
 RUN pip install -r requirements.txt
 
