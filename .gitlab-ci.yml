@@ -6,5 +6,10 @@ docker-build:
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
   script:
+    - cd myApp 
     - docker build --pull -t dominikosseqq/stats-app .
     - docker push dominikosseqq/stats-app
+    - cd ..
+    - cd myAppWeb
+    - docker build -pull -t dominikosseqq/stats-app-web .
+    - docker push dominikosseqq/stats-app-web
